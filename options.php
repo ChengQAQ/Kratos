@@ -500,6 +500,12 @@ function optionsframework_options() {
 		'id' => 'social_github',
 		'std' => '',
 		'type' => 'text');
+    $options[] = array(
+		'name' => 'Telegram',
+		'desc' => '连接前要带有 http:// 或者 https:// ',
+		'id' => 'social_telegram',
+		'std' => '',
+		'type' => 'text');
 	$options[] = array(
 		'name' => '广告配置',
 		'type' => 'heading');
