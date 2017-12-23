@@ -34,6 +34,12 @@ function optionsframework_options() {
 		'id' => 'background_index_color',
 		'std' => '#f5f5f5',
 		'type' => 'color');
+    $options[] = array(
+		'name' => '站点标签页颜色',
+		'desc' => '针对整个站点标签页颜色控制 移动端Chrome可见',
+		'id' => 'tab_theme_color',
+		'std' => '#f5f5f5',
+		'type' => 'color');
 	$options[] = array(
 		'name' => '列表布局',
 		'desc' => '选择你喜欢的列表布局，默认显示新式列表布局',

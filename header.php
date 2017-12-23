@@ -11,6 +11,12 @@
 		<title><?php wp_title( '-', true, 'right' ); ?></title>
 		<meta charset="<?php bloginfo('charset'); ?>">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		
+		<?php if(kratos_option('tab_theme_color')){ ?>
+            <meta name="theme-color" content="<?php echo kratos_option('tab_theme_color') ?>">
+            <meta name="msapplication-TileColor" content="<?php echo kratos_option('tab_theme_color') ?>">
+        <?php }?>
+		
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<meta name="description" content="<?php kratos_description(); ?>" />
 		<meta name="keywords" content="<?php kratos_keywords();?>" />
