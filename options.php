@@ -456,6 +456,11 @@ function optionsframework_options() {
 		'desc' => '输入您的公安网备案的链接地址',
 		'id' => 'gov_link',
 		'type' => 'text');
+    $options[] = array(
+        'name' => '自定义页脚内容',
+        'desc' => '支持html标签',
+        'id' => 'custom_footer',
+        'type' => 'textarea');
 	$options[] = array(
 		'name' => '社交组件',
 		'type' => 'heading');
