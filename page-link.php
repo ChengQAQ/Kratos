@@ -33,7 +33,7 @@ get_header('banner'); ?>
                             <div class="beatmapsets__items">
                             <?php
                                 $bookmarks = get_bookmarks( array(
-                                    'orderby'        => 'name',
+                                    'orderby'        => 'rand',
                                     'order'          => 'ASC'
                                 ));
                                 foreach ( $bookmarks as $bookmark ) {
@@ -55,7 +55,7 @@ get_header('banner'); ?>
                                     foreach($attr as $icon => $url){
                                         if(stripos($icon,"fa-")!==0) continue;
                                         $iconsHTML.='
-                                            <a href="'.$url.'" class="beatmapset-panel__icon js-beatmapset-download-link" data-turbolinks="false">
+                                            <a href="'.$url.'" class="beatmapset-panel__icon js-beatmapset-download-link" data-turbolinks="false" target="_blank">
                                                 <span class="fa '.$icon.'"></span>
                                             </a>
                                         ';    
@@ -65,7 +65,7 @@ get_header('banner'); ?>
                                     <div class="beatmapset-panel">
                                         <div class="beatmapset-panel__panel">
                                             <div class="beatmapset-panel__header">
-                                                <a href="'.$attr['url'].'" class="beatmapset-panel__thumb" style="background-image: url('.$attr['banner'].');">
+                                                <a href="'.$attr['url'].'" class="beatmapset-panel__thumb" style="background-image: url('.$attr['banner'].');" target="_blank">
                                                     <div class="beatmapset-panel__title-artist-box">
                                                         <div class="u-ellipsis-overflow beatmapset-panel__header-text beatmapset-panel__header-text--title">'.$attr['name'].'</div>
                                                         <div class="beatmapset-panel__header-text">'.$attr['owner'].'</div>
@@ -91,7 +91,7 @@ get_header('banner'); ?>
                                                         <div class="u-ellipsis-overflow"></div>
                                                     </div>
                                                     <div class="beatmapset-panel__icons-box">
-                                                        <a href="'.$attr['url'].'" class="beatmapset-panel__icon js-beatmapset-download-link" data-turbolinks="false">
+                                                        <a href="'.$attr['url'].'" class="beatmapset-panel__icon js-beatmapset-download-link" data-turbolinks="false" target="_blank">
                                                             <span class="fa fa-globe"></span>
                                                         </a>
                                                     </div>
