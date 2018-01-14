@@ -23,7 +23,7 @@
 		
 		<?php if(!empty(kratos_option('dns_prefetch_list'))){
             foreach(explode(";",kratos_option('dns_prefetch_list')) as $uri){
-                echo '<link rel="dns-prefetch" href=//"'.$uri.'">';
+                echo '<link rel="dns-prefetch" href="//'.$uri.'">';
             }
 		}?>
 		
