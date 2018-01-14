@@ -17,6 +17,16 @@
             <meta name="msapplication-TileColor" content="<?php echo kratos_option('tab_theme_color') ?>">
         <?php }?>
 		
+        <?php if(kratos_option('dns_prefetch')){ ?>
+            <meta http-equiv="x-dns-prefetch-control" content="on">
+        <?php }?>
+		
+		<?php if(!empty(kratos_option('dns_prefetch_list'))){
+            foreach(explode(";",kratos_option('dns_prefetch_list')) as $uri){
+                echo '<link rel="dns-prefetch" href=//"'.$uri.'">';
+            }
+		}?>
+		
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<meta name="description" content="<?php kratos_description(); ?>" />
 		<meta name="keywords" content="<?php kratos_keywords();?>" />

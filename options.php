@@ -40,6 +40,17 @@ function optionsframework_options() {
 		'id' => 'tab_theme_color',
 		'std' => '#f5f5f5',
 		'type' => 'color');
+    $options[] = array(
+		'name' => 'DNS预解析',
+		'desc' => '是否允许浏览器预先通过DNS解析地址',
+		'id' => 'dns_prefetch',
+		'std' => '1',
+		'type' => 'checkbox');
+    $options[] = array(
+		'name' => 'DNS预解析列表',
+		'desc' => '用分号分割多个域名，请不要带上http(s)://',
+		'id' => 'dns_prefetch_list',
+		'type' => 'text');
 	$options[] = array(
 		'name' => '列表布局',
 		'desc' => '选择你喜欢的列表布局，默认显示新式列表布局',
