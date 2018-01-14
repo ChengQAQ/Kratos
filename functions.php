@@ -6,7 +6,7 @@
  * @version 2.5
  */
 
-define( 'KRATOS_VERSION', '2.5' );
+define( 'KRATOS_VERSION', '2.5.8.1.2' );
 
 require_once( get_template_directory() . '/inc/widgets.php');
 
