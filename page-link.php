@@ -82,7 +82,7 @@ get_header('banner'); ?>
                                                             <span class="beatmapset-panel__count-number">729</span>
                                                             <span class="fa fa-heart fa-fw"></span>
                                                         </div>
-                                                    </div--!>
+                                                    </div-->
                                                     <div class="beatmapset-panel__preview-bar" style="transition-duration: 0s; width: 0px;"></div>
                                                 </a>
                                             </div>
@@ -104,7 +104,7 @@ get_header('banner'); ?>
                                         </div>
                                         <!--a href="#" class="beatmapset-panel__play js-audio--play" data-audio-url="//b.ppy.sh/preview/176934.mp3">
                                             <span class="fa fa-play"></span>
-                                        </a--!>
+                                        </a-->
                                         <div class="beatmapset-panel__shadow"></div>
                                     </div>
                                 </div>';
