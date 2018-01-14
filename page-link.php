@@ -2,8 +2,11 @@
 /**
  * The template for displaying pages
  *
+ * Stylesheet from osu!web https://github.com/ppy/osu-web
+ * This file is licensed under the GNU Affero General Public License v3.0
+ * 
  * Template Name: 友链模板
- * @package Vtrois
+ * @package Milkice
  * @version 2.4
  */
 $page_side_bar = kratos_option('page_side_bar');
@@ -123,12 +126,12 @@ get_header('banner'); ?>
 						</footer>
 						<?php }?>
 					</div>
-						<?php if ( kratos_option( 'page_cc' ) ) : ?>
 						<div class="kratos-hentry kratos-copyright text-center clearfix">
-							<img alt="知识共享许可协议" src="<?php echo get_template_directory_uri(); ?>/images/licenses.png">
-							<h5>本作品采用 <a rel="license nofollow" target="_blank" href="http://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
+							<img alt="GNU Affero通用公共许可证v3.0" src="<?php echo get_template_directory_uri(); ?>/images/agplv3.png">
+							<h5> 本页部分样式表来源于 <a target="_blank" href="https://github.com/ppy/osu-web">osu!web</a> </h5>
+							<h5> 本页采用 <a rel="license nofollow" target="_blank" href="https://www.gnu.org/licenses/agpl-3.0.en.html">GNU Affero通用公共许可证
+                            </a> 进行许可</h5>
 						</div>
-						<?php endif; ?>
 						<?php comments_template(); ?>
 				</article>
 			<?php endwhile;?>
