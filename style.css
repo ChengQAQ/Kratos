@@ -34,7 +34,7 @@ a {
 }
 
 a:hover {
-	text-decoration: none;
+	text-decoration: underline;
 	color: #51aded!important
 }
 
@@ -2060,6 +2060,12 @@ a.list-group-item:focus,a.list-group-item:hover,button.list-group-item:focus,but
 .kratos-post-content {
 	margin: 10px 10px
 }
+
+.kratos-post-content a{
+    color: #2278bb
+}
+
+
 
 .kratos-post-content p {
 	margin-bottom: 1em;
