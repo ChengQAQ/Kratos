@@ -38,7 +38,7 @@ foreach ($pieces as $piece) {
     if (preg_match($pattern_contents, $piece, $matches)) {
         $new_content .= wptexturize(wpautop($matches[1]));
     } else {
-        $new_content .= $piece
+        $new_content .= $piece;
     }
 }
     return $new_content;
