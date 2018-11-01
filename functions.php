@@ -12,7 +12,7 @@ require_once( get_template_directory() . '/inc/widgets.php');
 
 /**
  * Replace Gravatar server
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
  */
@@ -24,7 +24,7 @@ add_filter( 'get_avatar', 'kratos_get_avatar' );
 
 /**
  * Disable automatic formatting
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
  */
@@ -48,21 +48,21 @@ add_filter('the_content', 'my_formatter', 99);
 
 /**
  * Load scripts
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
- */ 
-function kratos_theme_scripts() {  
-    $dir = get_template_directory_uri(); 
-    if ( !is_admin() ) {  
-        wp_enqueue_style( 'animate', $dir . '/css/animate.min.css', array(), '3.5.1'); 
+ */
+function kratos_theme_scripts() {
+    $dir = get_template_directory_uri();
+    if ( !is_admin() ) {
+        wp_enqueue_style( 'animate', $dir . '/css/animate.min.css', array(), '3.5.1');
         wp_enqueue_style( 'awesome', $dir . '/css/font-awesome.min.css', array(), '4.7.0');
         wp_enqueue_style( 'bootstrap', $dir . '/css/bootstrap.min.css', array(), '3.3.7');
         wp_enqueue_style( 'superfish', $dir . '/css/superfish.min.css', array(), 'r7');
         wp_enqueue_style( 'layer', $dir . '/css/layer.min.css', array(), KRATOS_VERSION);
         wp_enqueue_style( 'kratos', get_stylesheet_uri(), array(), KRATOS_VERSION);
         wp_enqueue_script( 'jquery', $dir . '/js/jquery.min.js' , array(), '2.1.4');
-        wp_enqueue_script( 'easing', $dir . '/js/jquery.easing.min.js', array(), '1.3.0'); 
+        wp_enqueue_script( 'easing', $dir . '/js/jquery.easing.min.js', array(), '1.3.0');
         wp_enqueue_script( 'qrcode', $dir . '/js/jquery.qrcode.min.js', array(), KRATOS_VERSION);
         wp_enqueue_script( 'layer', $dir . '/js/layer.min.js', array(), '3.0.3');
         wp_enqueue_script( 'modernizr', $dir . '/js/modernizr.min.js' , array(), '2.6.2');
@@ -72,13 +72,15 @@ function kratos_theme_scripts() {
         wp_enqueue_script( 'hoverIntents', $dir . '/js/hoverIntent.min.js', array(), 'r7');
         wp_enqueue_script( 'superfish', $dir . '/js/superfish.js', array(), '1.0.0');
         wp_enqueue_script( 'kratos', $dir . '/js/kratos.js', array(),  KRATOS_VERSION);
-    }  
-}  
+        wp_enqueue_style( 'kratos-diy', $dir . '/css/kratos.diy.css', array(), KRATOS_VERSION);
+        wp_enqueue_script( 'kratos-diy', $dir . '/js/kratos.diy.js', array(),  KRATOS_VERSION);
+    }
+}
 add_action('wp_enqueue_scripts', 'kratos_theme_scripts');
 
 /**
  * Remove the head code
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
  */
@@ -97,7 +99,7 @@ remove_action( 'wp_head', 'feed_links', 2 );
 remove_action( 'wp_head', 'feed_links_extra', 3 );
 remove_action('admin_print_scripts', 'print_emoji_detection_script');
 remove_action('admin_print_styles', 'print_emoji_styles');
-remove_filter('the_content', 'wptexturize'); 
+remove_filter('the_content', 'wptexturize');
 remove_filter('comment_text', 'wptexturize');
 remove_action('wp_head', 'print_emoji_detection_script', 7);
 remove_action('wp_print_styles', 'print_emoji_styles');
@@ -114,7 +116,7 @@ function mt_enqueue_scripts() {
 
 /**
  * Prohibit character escaping
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
  */
@@ -126,7 +128,7 @@ remove_filter('the_content', 'wptexturize');
 
 /**
  * Add the page html
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
  */
@@ -142,7 +144,7 @@ function html_page_permalink() {
 
 /**
  * Remove the revision
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
  */
@@ -150,7 +152,7 @@ remove_action('post_updated','wp_save_post_revision' );
 
 /**
  * Short code
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
  */
@@ -159,18 +161,18 @@ add_filter( 'the_content', 'wpautop' , 12);
 
 /**
  * Link manager
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
- */  
+ */
 add_filter( 'pre_option_link_manager_enabled', '__return_true' );
 
 /**
  * Auto post link
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
- */  
+ */
 function kratos_auto_post_link($content) {
   global $post;
   $content = preg_replace('/<\s*img\s+[^>]*?src\s*=\s*(\'|\")(.*?)\\1[^>]*?\/?\s*>/i', "<img layer-src=\"$2\" src=\"$2\" alt=\"《".$post->post_title."》\" />", $content);
@@ -180,7 +182,7 @@ add_filter ('the_content', 'kratos_auto_post_link',0);
 
 /**
  * Init theme
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
  */
@@ -195,7 +197,7 @@ function Init_theme(){
 
 /**
  * Remove the excess CSS selectors
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
  */
@@ -208,7 +210,7 @@ function my_css_attributes_filter($var) {
 
 /**
  * Short code set
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
  */
@@ -400,7 +402,7 @@ add_shortcode('bilibili' , 'bilibili' );
 
 /**
  * Create precode function
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
  */
@@ -486,7 +488,7 @@ function add_plugin_b( $plugin_array ) {
 
 /**
  * Add more buttons
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
  */
@@ -501,7 +503,7 @@ add_filter("mce_buttons_2", "add_more_buttons");
 
 /**
  * The article heat
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
  */
@@ -534,7 +536,7 @@ function most_comm_posts($days=30, $nums=5) {
 
 /**
  * Add article type
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
  */
@@ -542,7 +544,7 @@ add_theme_support( 'post-formats', array('gallery','video') );
 
 /**
  * Keywords set
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
  */
@@ -552,7 +554,7 @@ function kratos_keywords(){
         elseif( is_single() ){
             echo trim(wp_title('',FALSE)).',';
             if ( has_tag() ) {foreach((get_the_tags()) as $tag ) { echo $tag->name.','; } }
-            foreach((get_the_category()) as $category) { echo $category->cat_name.','; } 
+            foreach((get_the_category()) as $category) { echo $category->cat_name.','; }
         }
         elseif( is_search() ){ the_search_query(); }
         else{ echo trim(wp_title('',FALSE)); }
@@ -560,14 +562,14 @@ function kratos_keywords(){
 
 /**
  * Description set
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
- */ 
+ */
 function kratos_description(){
         if( is_home() || is_front_page() ){ echo trim(kratos_option('site_description')); }
         elseif( is_category() ){ $description = strip_tags(category_description());echo trim($description);}
-        elseif( is_single() ){ 
+        elseif( is_single() ){
         if(get_the_excerpt()){
             echo get_the_excerpt();
         }else{
@@ -583,7 +585,7 @@ function kratos_description(){
 
 /**
  * Article outside chain optimization
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
  */
@@ -622,7 +624,7 @@ add_filter( 'the_content', 'imgnofollow');
 
 /**
  * The title set
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
  */
@@ -642,7 +644,7 @@ add_filter( 'wp_title', 'kratos_wp_title', 10, 2 );
 
 /**
  * Mail smtp setting
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
  */
@@ -655,7 +657,7 @@ function mail_smtp( $phpmailer ) {
         $mail_username = kratos_option('mail_username');
         $mail_passwd = kratos_option('mail_passwd');
         $mail_smtpsecure = kratos_option('mail_smtpsecure');
-        $phpmailer->FromName = $mail_name ? $mail_name : 'Kratos'; 
+        $phpmailer->FromName = $mail_name ? $mail_name : 'Kratos';
         $phpmailer->Host = $mail_host ? $mail_host : 'smtp.vtrois.com';
         $phpmailer->Port = $mail_port ? $mail_port : '994';
         $phpmailer->Username = $mail_username ? $mail_username : 'no_reply@vtrois.com';
@@ -669,7 +671,7 @@ function mail_smtp( $phpmailer ) {
 
 /**
  * Comments email response system
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
  */
@@ -772,7 +774,7 @@ add_action('comment_post', 'comment_mail_notify');
 
 /**
  * Fix the password reset url error
- * 
+ *
  * @author MoeDog <xb@fczbl.vip>
  * @license GPL-3.0
  */
@@ -809,7 +811,7 @@ function kratos_pwd_register_mail($user_id){
 
 /**
  * Add extra register fields
- * 
+ *
  * @author MoeDog <xb@fczbl.vip>
  * @license GPL-3.0
  */
@@ -851,7 +853,7 @@ function kratos_register_extra_fields($user_id){
 
 /**
  * The admin control module
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
  */
@@ -872,7 +874,7 @@ add_filter( 'optionsframework_menu', 'kratos_options_menu_filter' );
 
 /**
  * The menu navigation registration
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
  */
@@ -883,7 +885,7 @@ add_action('after_setup_theme', 'kratos_register_nav_menu');
 
 /**
  * Highlighting the active menu
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
  */
@@ -896,24 +898,24 @@ add_filter('nav_menu_css_class', 'kratos_active_menu_class');
 
 /**
  * Photo Thumbnails
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
  */
-function kratos_photo_thumbnail() {  
-    global $post;  
-    if ( has_post_thumbnail() ) {  
+function kratos_photo_thumbnail() {
+    global $post;
+    if ( has_post_thumbnail() ) {
        the_post_thumbnail(array(750, ), array('class' => 'img-responsive'));
-    } else { 
-        $content = $post->post_content;  
-        preg_match_all('/<img.*?(?: |\\t|\\r|\\n)?src=[\'"]?(.+?)[\'"]?(?:(?: |\\t|\\r|\\n)+.*?)?>/sim', $content, $strResult, PREG_PATTERN_ORDER);  
-        $n = count($strResult[1]);  
-        if($n > 0){ 
-            echo '<img src="'.$strResult[1][0].'" class="img-responsive" />';  
+    } else {
+        $content = $post->post_content;
+        preg_match_all('/<img.*?(?: |\\t|\\r|\\n)?src=[\'"]?(.+?)[\'"]?(?:(?: |\\t|\\r|\\n)+.*?)?>/sim', $content, $strResult, PREG_PATTERN_ORDER);
+        $n = count($strResult[1]);
+        if($n > 0){
+            echo '<img src="'.$strResult[1][0].'" class="img-responsive" />';
         }else {
-            echo '<img src="'.get_bloginfo('template_url').'/images/default.jpg" class="img-responsive" />';  
-        }  
-    }  
+            echo '<img src="'.get_bloginfo('template_url').'/images/default.jpg" class="img-responsive" />';
+        }
+    }
 }
 
 function kratos_thumbnail_url(){
@@ -936,28 +938,28 @@ function kratos_thumbnail_url(){
 
 /**
  * Post Thumbnails
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
  */
-if ( function_exists( 'add_image_size' ) ){  
+if ( function_exists( 'add_image_size' ) ){
     add_image_size( 'kratos-thumb', 750);
-}  
-function kratos_blog_thumbnail() {    
-    global $post;  
+}
+function kratos_blog_thumbnail() {
+    global $post;
     $img_id = get_post_thumbnail_id();
     $img_url = wp_get_attachment_image_src($img_id,'kratos-entry-thumb');
     $img_url = $img_url[0];
     if ( has_post_thumbnail() ) {
-        echo '<a href="'.get_permalink().'"><img src="'.$img_url.'" /></a>';  
-    } 
-}  
+        echo '<a href="'.get_permalink().'"><img src="'.$img_url.'" /></a>';
+    }
+}
 add_filter( 'add_image_size', create_function( '', 'return 1;' ) );
 add_theme_support( "post-thumbnails" );
 
 /**
  * Post Thumbnails New
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
  */
@@ -980,12 +982,12 @@ function kratos_blog_thumbnail_new() {
         } else {
              echo '<a href="'.get_permalink().'"><img src="'. kratos_option('default_image') .'" /></a>';
         }
-    }  
+    }
 }
 
 /**
  * The length and suffix
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
  */
@@ -1000,7 +1002,7 @@ add_filter('excerpt_more', 'kratos_excerpt_more');
 
 /**
  * Share the thumbnail fetching
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
  */
@@ -1024,7 +1026,7 @@ function share_post_image(){
 
 /**
  * The article reading quantity statistics
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
  */
@@ -1056,7 +1058,7 @@ function kratos_get_post_views($before = '', $after = '', $echo = 1)
 
 /**
  * Banner
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
  */
@@ -1112,7 +1114,7 @@ add_action( 'optionsframework_after_validate', 'clear_banner' );
 
 /**
  * Appreciate the article
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
  */
@@ -1127,12 +1129,12 @@ function kratos_love(){
         setcookie('love_'.$id,$id,$expire,'/',$domain,false);
         if (!$raters || !is_numeric($raters)) {
             update_post_meta($id, 'love', 1);
-        } 
+        }
         else {
             update_post_meta($id, 'love', ($raters + 1));
         }
         echo get_post_meta($id,'love',true);
-    } 
+    }
     die;
 }
 add_action('wp_ajax_nopriv_love', 'kratos_love');
@@ -1140,20 +1142,20 @@ add_action('wp_ajax_love', 'kratos_love');
 
 /**
  * Post title optimization
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
  */
 add_filter( 'private_title_format', 'kratos_private_title_format' );
 add_filter( 'protected_title_format', 'kratos_private_title_format' );
- 
+
 function kratos_private_title_format( $format ) {
     return '%s';
 }
 
 /**
  * Password protection articles
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
  */
@@ -1179,7 +1181,7 @@ return $o;
 
 /**
  * Comments on the face
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
  */
@@ -1226,7 +1228,7 @@ smilies_reset();
 
 /**
  * Paging
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
  */
@@ -1277,7 +1279,7 @@ function kratos_pages($range = 5){
 
 /**
  * Theme notice
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
  */
@@ -1297,7 +1299,7 @@ function Kratos_admin_notice() {
 
 /**
  * Admin footer text
- * 
+ *
  * @author Vtrois <seaton@vtrois.com>
  * @license GPL-3.0
  */
