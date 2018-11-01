@@ -34,10 +34,11 @@ function my_formatter($content) {
     $pattern_contents = '{\[txt\](.*?)\[/txt\]}is';
     $pieces = preg_split($pattern_full, $content, -1, PREG_SPLIT_DELIM_CAPTURE);
 foreach ($pieces as $piece) {
+    $matches = array();
     if (preg_match($pattern_contents, $piece, $matches)) {
-        $new_content .= $matches[1];
+        $new_content .= wptexturize(wpautop($matches[1]));
     } else {
-        $new_content .= wptexturize(wpautop($piece));
+        $new_content .= $piece
     }
 }
     return $new_content;
@@ -1009,7 +1010,7 @@ add_filter('excerpt_more', 'kratos_excerpt_more');
 function share_post_image(){
     global $post;
     if (has_post_thumbnail($post->ID)) {
-        $post_thumbnail_id = get_post_thumbnail_id( $post_id );
+        $post_thumbnail_id = get_post_thumbnail_id( $post );
         $img = wp_get_attachment_image_src( $post_thumbnail_id, 'full' );
         $img = $img[0];
     }else{
