@@ -1,15 +1,16 @@
-﻿/*
+/*
 Theme Name: Kratos
 Theme URI: https://github.com/MilkiceForks/Kratos
 Author: Vtrois
 Author URI: https://www.vtrois.com/
 Description: Kratos 是一款专注于个人博客的主题，提供了一套可自定义的积木式页面配置组件，可以通过使用小工具、导航、社交组件、站点标识、自定颜色等来个性化你的站点。
-Version: 2.5.8.1.6
+Version: 2.6.4
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: 简约, 紧凑, 优雅, 情怀, 多栏, 自适应, 响应式, 小工具, 灵活顶部, 主题选项, 打赏组件, 收录优化, 文章分享, 轮播图片, 邮件功能, 社交组件, 广告栏目, 特色图像, 随动边栏, 嵌套评论, 页脚挂件, 自定义边栏, 自定义颜色, 自定义背景, 自定义布局
 GitHub Theme URI: https://github.com/MilkiceForks/Kratos
 */
+
 @charset "UTF-8";
 
 body {
@@ -27,7 +28,7 @@ body.kratos-offcanvas {
 }
 
 a {
-	color: #51aded;
+	color: #00a2ff;
 	-webkit-transition: .5s;
 	-o-transition: .5s;
 	transition: .5s
@@ -35,7 +36,7 @@ a {
 
 a:hover {
 	text-decoration: none;
-	color: #51aded!important
+	color: #0097ee!important
 }
 
 a:focus {
@@ -55,6 +56,15 @@ h1,h2,h3,h4,h5,h6 {
 	margin: 0 0 30px 0
 }
 
+h2.title-h2 {
+	margin: 15px -20px;
+	padding: 0 20px;
+	border-left: 5px solid #51aded;
+	background-color: rgba(243,243,243,.7);
+	font-size: 20px;
+	line-height: 40px
+}
+
 cite {
 	font-style: normal
 }
@@ -71,12 +81,12 @@ figure {
 
 ::-webkit-selection {
 	color: #fcfcfc;
-	background: #51aded
+	background: #00a2ff
 }
 
 ::-moz-selection {
 	color: #fcfcfc;
-	background: #51aded
+	background: #00a2ff
 }
 
 ::selection {
@@ -211,8 +221,8 @@ table,table tbody tr th {
 }
 
 .btn-primary {
-	border-color: #51aded;
-	background-color: #51aded;
+	border-color: #00a2ff;
+	background-color: #00a2ff;
 	color: #fff
 }
 
@@ -229,8 +239,8 @@ table,table tbody tr th {
 }
 
 .pagination>.active>a,.pagination>.active>a:focus,.pagination>.active>a:hover {
-	border-color: #51aded;
-	background-color: #51aded;
+	border-color: #00a2ff;
+	background-color: #00a2ff;
 	color: #fff!important
 }
 
@@ -253,7 +263,7 @@ table,table tbody tr th {
 }
 
 .pagination>li>a:focus,.pagination>li>a:hover {
-	border-color: #51aded;
+	border-color: #00a2ff;
 	background-color: #fff;
 	color: #333
 }
@@ -309,14 +319,14 @@ table,table tbody tr th {
 }
 
 .pagination>.active>a,.pagination>.active>a:focus,.pagination>.active>a:hover {
-	border-color: #51aded;
-	background-color: #51aded;
+	border-color: #00a2ff;
+	background-color: #00a2ff;
 	color: #fff!important
 }
 
 .pagination>li>a:focus,.pagination>li>a:hover {
-	border-color: #51aded;
-	background-color: #51aded;
+	border-color: #00a2ff;
+	background-color: #00a2ff;
 	color: #fff!important
 }
 
@@ -342,7 +352,7 @@ table,table tbody tr th {
 	list-style: url(images/ul-li.png) outside circle
 }
 
-.kratos-post-content {
+.kratos-post-content,.kratos-post-content-l {
 	word-break: break-word;
 	word-wrap: break-word
 }
@@ -527,7 +537,9 @@ table,table tbody tr th {
 .sf-menu ul {
 	box-shadow: none;
 	border: transparent;
-	min-width: 10em
+	min-width: 10em;
+	width: -moz-fit-content;
+	width: -webkit-fit-content
 }
 
 .sf-menu a {
@@ -535,7 +547,6 @@ table,table tbody tr th {
 	padding: .75em 1em!important;
 	font-weight: 400;
 	border-left: none;
-	border-top: none;
 	border-top: none;
 	text-decoration: none;
 	zoom: 1;
@@ -665,7 +676,7 @@ table,table tbody tr th {
 }
 
 #kratos-header-section .sub-menu a:hover {
-	color: #51aded!important
+	color: #00a2ff!important
 }
 
 #kratos-header-section .sub-menu li a {
@@ -823,7 +834,6 @@ table,table tbody tr th {
 	height: 0;
 	border-right: 8px solid transparent;
 	border-bottom: 8px solid #fff;
-	border-bottom: 8px solid #fff;
 	border-left: 8px solid transparent;
 	content: ''
 }
@@ -863,11 +873,7 @@ table,table tbody tr th {
 }
 
 #kratos-primary-menu .kratos-sub-menu a:hover {
-	color: #51aded!important
-}
-
-article a {
-	color: #333
+	color: #00a2ff!important
 }
 
 #slide {
@@ -901,7 +907,7 @@ article a {
 	width: 100px;
 	margin-left: -50px;
 	height: 2px;
-	background: #51aded
+	background: #00a2ff
 }
 
 .heading-section h3 {
@@ -1082,7 +1088,7 @@ article a {
 }
 
 #kratos-host .price-box.popular {
-	border: 2px solid #51aded
+	border: 2px solid #00a2ff
 }
 
 #kratos-host .price-box.popular .popular-text {
@@ -1092,7 +1098,7 @@ article a {
 	margin-top: -2em;
 	position: absolute;
 	padding: 4px 20px;
-	background: #51aded;
+	background: #00a2ff;
 	color: #fff;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
@@ -1107,7 +1113,7 @@ article a {
 	left: 50%;
 	margin-left: -10px;
 	border-top: 10px solid #000;
-	border-top-color: #51aded;
+	border-top-color: #00a2ff;
 	border-left: 10px solid transparent;
 	border-right: 10px solid transparent
 }
@@ -1374,8 +1380,8 @@ article a {
 
 #kratos-blog .kratos-post .kratos-post-image .kratos-category>a:hover {
 	color: #fff!important;
-	background: #51aded;
-	border: 1px solid #51aded
+	background: #00a2ff;
+	border: 1px solid #00a2ff
 }
 
 #kratos-blog .kratos-post .kratos-post-image .kratos-category>a:active,#kratos-blog .kratos-post .kratos-post-image .kratos-category>a:focus,#kratos-blog .kratos-post .kratos-post-image .kratos-category>a:hover {
@@ -1464,7 +1470,7 @@ article a {
 
 .kratos-social-icons>a {
 	padding: 4px 14px;
-	color: #51aded
+	color: #00a2ff
 }
 
 .kratos-social-icons>a i {
@@ -1618,15 +1624,15 @@ a.comment-reply-link:hover {
 }
 
 #comments-nav a:hover {
-	border: 1px solid #51aded;
-	background-color: #51aded;
+	border: 1px solid #00a2ff;
+	background-color: #00a2ff;
 	color: #fff!important
 }
 
 #comments-nav span.current {
 	font-weight: 700;
-	border: 1px solid #51aded;
-	background-color: #51aded;
+	border: 1px solid #00a2ff;
+	background-color: #00a2ff;
 	padding: 5px 10px;
 	color: #fff
 }
@@ -1734,7 +1740,7 @@ a.comment-reply-link:hover {
 	bottom: 0;
 	height: 2.5px!important;
 	width: 73px;
-	background-color: #51aded;
+	background-color: #00a2ff;
 	content: ''
 }
 
@@ -1904,7 +1910,7 @@ a.comment-reply-link:hover {
 
 #tabul .active {
 	position: relative;
-	border-bottom: 3px solid #51aded;
+	border-bottom: 3px solid #00a2ff;
 	background-color: #fff;
 	color: #000;
 	cursor: default
@@ -1965,6 +1971,11 @@ a.list-group-item:focus,a.list-group-item:hover,button.list-group-item:focus,but
 
 	.kratos-post-meta span i:not(:first-child) {
 		margin-left: 10px
+	}
+
+	.title-h2 {
+		padding: 0 15px;
+		font-size: 18px
 	}
 }
 
@@ -2027,7 +2038,7 @@ a.list-group-item:focus,a.list-group-item:hover,button.list-group-item:focus,but
 	color: #fff;
 	vertical-align: baseline;
 	white-space: nowrap;
-	background-color: #51aded;
+	background-color: #00a2ff;
 	margin-right: 5px;
 	position: relative;
 	top: -2px;
@@ -2048,7 +2059,7 @@ a.list-group-item:focus,a.list-group-item:hover,button.list-group-item:focus,but
 	content: "";
 	top: 6px;
 	right: -4px;
-	border-left: 4px solid #51aded;
+	border-left: 4px solid #00a2ff;
 	border-top: 4px solid transparent;
 	border-bottom: 4px solid transparent
 }
@@ -2057,17 +2068,11 @@ a.list-group-item:focus,a.list-group-item:hover,button.list-group-item:focus,but
 	color: #fff!important
 }
 
-.kratos-post-content {
+.kratos-post-content,.kratos-post-content-l {
 	margin: 10px 10px
 }
 
-.kratos-post-content a{
-    color: #2278bb
-}
-
-
-
-.kratos-post-content ol,p,ul {
+.kratos-post-content p {
 	margin-bottom: 1em;
 	font-size: 14px;
 	color: #333
@@ -2150,7 +2155,7 @@ a.list-group-item:focus,a.list-group-item:hover,button.list-group-item:focus,but
 	display: inline-block;
 	margin: 0 2px;
 	width: 130px;
-	height: 40px;
+	height: 35px;
 	border: 1px solid #e87461;
 	border-radius: 0;
 	background: #fff;
@@ -2159,7 +2164,7 @@ a.list-group-item:focus,a.list-group-item:hover,button.list-group-item:focus,but
 	text-align: center;
 	text-decoration: none;
 	font-size: 14.5px;
-	line-height: 40px;
+	line-height: 34px;
 	-webkit-transition: all .3s ease;
 	transition: all .3s ease
 }
@@ -2278,7 +2283,7 @@ a.list-group-item:focus,a.list-group-item:hover,button.list-group-item:focus,but
 	height: 50px;
 	border: 4px solid #fff;
 	border-radius: 40px;
-	background: #51aded;
+	background: #00a2ff;
 	color: #fff;
 	font-weight: 600;
 	font-size: 18px;
@@ -2600,7 +2605,13 @@ img.size-smiley {
 }
 
 .kratos-entry-header-new {
-	margin: 3px 0 6px
+	margin: 3px 0 6px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-webkit-box-orient: vertical;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	max-height: 25px
 }
 
 .kratos-entry-thumb img {
@@ -2694,7 +2705,7 @@ img.size-smiley {
 .kratos-post-content h2 {
 	margin: 15px -25px;
 	padding: 0 25px;
-	border-left: 5px solid #51aded;
+	border-left: 5px solid #00a2ff;
 	background-color: #f7f7f7;
 	font-size: 18px;
 	line-height: 40px
@@ -2774,6 +2785,14 @@ img.size-smiley {
 	z-index: 2
 }
 
+@media screen and (max-width:768px) {
+	.cd-tool a {
+		width: 45px;
+		height: 45px;
+		right: 20px
+	}
+}
+
 .cd-gb-a {
 	bottom: 152px
 }
@@ -2832,7 +2851,7 @@ img.size-smiley {
 }
 
 .no-touch .cd-top:hover {
-	background-color: #51aded;
+	background-color: #00a2ff;
 	opacity: 1
 }
 
@@ -2855,7 +2874,7 @@ img.size-smiley {
 }
 
 .btn:active,.btn:focus,.btn:hover {
-	background: #393e46!important;
+	background: #0097ee!important;
 	color: #fff;
 	outline: 0!important
 }
@@ -2865,7 +2884,7 @@ img.size-smiley {
 }
 
 .btn.btn-primary {
-	background: #51aded;
+	background: #00a2ff;
 	color: #fff;
 	border: none!important;
 	border: 2px solid transparent!important
@@ -2873,7 +2892,7 @@ img.size-smiley {
 
 .btn.btn-primary:active,.btn.btn-primary:focus,.btn.btn-primary:hover {
 	box-shadow: none;
-	background: #51aded;
+	background: #00a2ff;
 	color: #fff!important
 }
 
@@ -2883,8 +2902,8 @@ img.size-smiley {
 }
 
 .btn.btn-star:active,.btn.btn-star:focus,.btn.btn-star:hover {
-	background: #51aded!important;
-	border: 2px solid #51aded;
+	background: #00a2ff!important;
+	border: 2px solid #00a2ff;
 	color: #fff
 }
 
@@ -2892,7 +2911,7 @@ img.size-smiley {
 	padding: 10px 26px;
 	border: 1px solid #3e92cc;
 	background: #3e92cc;
-	color: #fff;
+	color: #fff!important;
 	line-height: 3
 }
 
@@ -2927,6 +2946,10 @@ img.size-smiley {
 		padding: 9px 1pc;
 		font-size: 14px
 	}
+
+	.cd-top span {
+		margin-top: 13px
+	}
 }
 
 @media screen and (max-width:450px) {
@@ -2946,8 +2969,8 @@ img.size-smiley {
 }
 
 .pagination>.current-menu-item>a {
-	background-color: #51aded;
-	border-color: #51aded
+	background-color: #00a2ff;
+	border-color: #00a2ff
 }
 
 .view-more-1 {
@@ -3034,7 +3057,7 @@ img.size-smiley {
 }
 
 #offcanvas-menu ul li a:hover {
-	color: #51aded
+	color: #00a2ff
 }
 
 #offcanvas-menu ul li>.sub-menu {
@@ -3043,7 +3066,7 @@ img.size-smiley {
 }
 
 #offcanvas-menu ul li.current-menu-item>a {
-	color: #51aded
+	color: #00a2ff
 }
 
 #offcanvas-menu ul .sub-menu {
@@ -3387,7 +3410,7 @@ img.size-smiley {
 }
 
 .btn.btn-star:active,.btn.btn-star:focus,.btn.btn-star:hover {
-	border: 1px solid #51aded
+	border: 1px solid #00a2ff
 }
 
 #kratos-blog .kratos-post .kratos-post-text p {
@@ -3444,5 +3467,86 @@ img.size-smiley {
 @media (min-width:1200px) {
 	#kratos-photos .kratos-photos-item img,.kratos-post-image img {
 		height: 190px
+	}
+}
+
+.linkpage ul:after {
+	content: " ";
+	clear: both;
+	display: block
+}
+
+.linkpage li {
+	float: left;
+	width: 48%;
+	position: relative;
+	transition: all .3s ease-out;
+	border-radius: 5px;
+	line-height: 1.3;
+	height: 90px;
+	list-style: none
+}
+
+.linkpage h3 {
+	margin: 15px -25px;
+	padding: 0 25px;
+	border-left: 5px solid #51aded;
+	background-color: #f7f7f7;
+	font-size: 25px;
+	line-height: 40px
+}
+
+.linkpage li:hover {
+	background: rgba(230,244,250,.5);
+	cursor: pointer
+}
+
+.linkpage li a {
+	padding: 0 10px 0 90px
+}
+
+.linkpage li a img {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	cursor: pointer
+}
+
+.linkpage li a h4 {
+	color: #333;
+	font-size: 18px;
+	margin: 0 0 7px 0;
+	padding-left: 90px;
+	transition: .5s
+}
+
+.linkpage li a h4:hover {
+	color: #51aded
+}
+
+.linkpage li a h4,.linkpage li a p {
+	cursor: pointer;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	line-height: 1.4
+}
+
+.linkpage li a p {
+	font-size: 12px;
+	color: #999;
+	padding-left: 90px
+}
+
+@media(max-width:460px) {
+	.linkpage li {
+		width: 97%
+	}
+
+	.linkpage ul {
+		padding-left: 5px
 	}
 }
