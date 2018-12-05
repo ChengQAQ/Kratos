@@ -52,6 +52,7 @@ get_header('banner'); ?>
                                             $attr[$key]=$value;
                                         }
                                     }
+				    $attr['banner'] = $attr['banner'] ?: $bookmark->link_image;
                                     $iconsHTML='
                                     <div class="beatmapset-panel__row">
                                     <div class="beatmapset-panel__icons-box">';
